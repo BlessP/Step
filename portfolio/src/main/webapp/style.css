@@ -12,7 +12,7 @@ html {
     height: 650px;
 }
 .font {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .textsize {
@@ -23,22 +23,47 @@ html {
     text-align: center;
 }
 
+.right {
+    align-content: right;
+}
+
+.left {
+    text-align: left;
+}
+
 #about {
     background: coral;
+    width:85%;
+    margin: auto;
+}
+
+#selfie {
+    float: right;
+    position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-right: 50px;
 }
 
 #experience {
     background: cornflowerblue;
+    text-align: center;
+    margin: auto;
+    width:85%;
 }
 
 #contact {
     background: goldenrod;
+    width:85%;
+    margin:auto;
+    text-align: left; 
 }
 #welcome {
-    margin-top: 0px;
     color: coral;
     font-size:200px;
-    padding-top: 100px;
+    align-content: center;
+    margin-bottom: 0;
 }
 .fontcolor {
     color: whitesmoke;
@@ -46,19 +71,38 @@ html {
 .button {
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 50px;
-  margin: 0px 2px;
+  font-size: 35px;
   cursor: pointer;
+  border-radius: 25px;
+  overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position:relative;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-15%);
   
 }
+
 .wordtext{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     color: antiquewhite;
 }
 
+#list{
+    align-content: center;
+    -ms-transform: translateY(+50%);
+    transform: translateY(+50%);
+}
 
-
+#bio {
+    width:50%;
+    float: left;
+    text-align:center;
+    margin-left: 50px;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
