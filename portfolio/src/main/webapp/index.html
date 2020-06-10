@@ -8,21 +8,35 @@
   </head>
   <body>
     <div class="center" id="content">
-    <p class="center font" id="welcome">Bless Paynes' Portfolio</p>
-    <button type="button" class="button" id="about">Click Me Too</button>
-    <button type="button" class="button" id="experience">Click Me Too!</button>
-    <button type="button" class="button" id="contact">Click Me Third!</button>
+    <div class="button" id="buttons">
+        <p class="center font" id="welcome">Bless Paynes' Portfolio</p>
+        <a href="#About" class="button" id="about">About Me</a>
+        <a href="#Experience" class="button" id="experience">Experience</button>
+        <a href="#Contact" class="button" id="contact">Contact</button>
     </div>
-    <div class="size font textsize center fontcolor" id="about">
-     <h1> About Me</h1>
-     <p class="wordtext center">My name is Bless Paynes and I'm a junior currently attending Hampton University. I've lived in Northern VA my entire life but I have travelled a ton in the States!</p>
-     <p class="wordtext center">Some of my many hobbies include making clothes, knitting, crocheting, drawing and I also run a small but ever growing nail business.</p> 
+    </div>
+    <div class="size font textsize fontcolor left" id="about">
+     <div id ="bio">
+    <h2 id="About">About me!</h2>
+     <p class="wordtext">My name is <b>Bless Paynes</b> and I'm a junior currently attending <b>Hampton University</b>. I've lived in <b>Northern VA </b> my entire life but I have travelled a ton in the States!</p>
+     <p class="wordtext">Some of my many hobbies include making clothes, knitting, crocheting, drawing and I also run a small but ever growing nail business.</p> 
+     </div>
+     <img id="selfie" src="/images/selfie.jpeg" alt="me smiling" width="400" hieght="400" class="right">
     </div>
     <div class="size font textsize center fontcolor" id="experience">
-     <h1> Experience</h1> 
+    <h3 id="Experience">Experience</h3>
+      <ul class="wordtext" id="list">
+        <li>2x Google STEP (Previously known as EP) Intern</li>
+        <li>Worked on Android App team</li>
+        <li>Worked on Google Fi team</li>
+        <li>Rock Paper Scisscor game</li>
+        <li>Utilizing GRPC</li>
+      </ul>            
     </div>
     <div class="size font textsize center fontcolor" id="contact">
-     <h1> Contact Me</h1>  
+     <h2 id="Contact">Contact Me</h2> 
+     <p style="color:purple;">Bpaynes4291@gmail.com</p> 
+     <a href="https://github.com/BlessP/Step"><p style="color:purple;">Github</p></a>
     </div>
   </body>
 </html>
