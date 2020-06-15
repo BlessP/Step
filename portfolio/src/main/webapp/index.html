@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Bless Paynes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
   <body>
     <div class="center" id="content">
-    <div class="button" id="buttons">
+      <div class="button" id="buttons">
         <p class="center font" id="welcome">Bless Paynes' Portfolio</p>
         <a href="#About" class="button" id="about">About Me</a>
         <a href="#Experience" class="button" id="experience">Experience</a>
         <a href="#Contact" class="button" id="contact">Contact</a>
-    </div>
-    </div>
-    <div class="size font textsize fontcolor left" id="about">
-     <div id ="bio">
-    <h2 id="About">About me!</h2>
-     <p class="wordtext">My name is <b>Bless Paynes</b> and I'm a junior currently attending <b>Hampton University</b>. I've lived in <b>Northern VA </b> my entire life but I have travelled a ton in the States!</p>
-     <p class="wordtext">Some of my many hobbies include making clothes, knitting, crocheting, drawing and I also run a small but ever growing nail business.</p> 
-     </div>
-     <img id="selfie" src="/images/selfie.jpeg" alt="me smiling" width="400" hieght="400" class="right">
-    </div>
-    <div class="size font textsize center fontcolor" id="experience">
-    <h3 id="Experience">Experience</h3>
-      <ul class="wordtext" id="list">
-        <li>2x Google STEP (Previously known as EP) Intern</li>
-        <li>Worked on Android App team</li>
-        <li>Worked on Google Fi team</li>
-        <li>Rock Paper Scisscor game</li>
-        <li>Utilizing GRPC</li>
-      </ul>            
-    </div>
-    <div class="size font textsize center fontcolor" id="contact">
-     <h2 id="Contact">Contact Me</h2> 
-     <p style="color:purple;">Bpaynes4291@gmail.com</p> 
-     <a href="https://github.com/BlessP/Step"><p style="color:purple;">Github</p></a>
-     <div class="buttons" id="message">
-      <button onclick="getRandomQuoteUsingArrowFunctions()">Click for my name!</button>
-      <div id="name-container"></div>
       </div>
-     </div>
+      <div class="size font textsize fontcolor left" id="about">
+        <div id="bio">
+          <h2 id="About">About me!</h2>
+          <p class="wordtext">
+            My name is <b>Bless Paynes</b> and I'm a junior currently attending <b>Hampton University</b>. I've lived in
+            <b>Northern VA </b> my entire life but I have travelled a ton in the States!
+          </p>
+          <p class="wordtext">
+            Some of my many hobbies include making clothes, knitting, crocheting, drawing and I also run a small but
+            ever growing nail business.
+          </p>
+        </div>
+        <img id="selfie" src="/images/selfie.jpeg" alt="me smiling" width="400" hieght="400" class="right" />
+      </div>
+      <div class="size font textsize center fontcolor" id="experience">
+        <h3 id="Experience">Experience</h3>
+        <ul class="wordtext" id="list">
+          <li>2x Google STEP (Previously known as EP) Intern</li>
+          <li>Worked on Android App team</li>
+          <li>Worked on Google Fi team</li>
+          <li>Rock Paper Scisscor game</li>
+          <li>Utilizing GRPC</li>
+        </ul>
+      </div>
+      <div class="size font textsize center fontcolor" id="contact">
+        <h2 id="Contact">Contact Me</h2>
+        <p style="color: purple;">Bpaynes4291@gmail.com</p>
+        <a href="https://github.com/BlessP/Step"><p style="color: purple;">Github</p></a>
+        <div class="buttons" id="message">
+          <button onclick="getName()" type="button">Click for my name!</button>
+          <div id="name-container"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
