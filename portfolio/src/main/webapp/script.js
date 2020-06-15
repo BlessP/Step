@@ -26,9 +26,8 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-function addQuoteToDom(quote) {
-  console.log('Adding quote to dom: ' + quote);
-
-  const quoteContainer = document.getElementById('quote-container');
-  quoteContainer.innerText = quote;
+function getRandomQuoteUsingArrowFunctions(name) {
+  fetch('/data').then((response) => response.text()).then((name) => {
+  document.getElementById('name-container').innerText = name;
+ });
 }
