@@ -39,8 +39,8 @@ public class DataServlet extends HttpServlet {
   private String convertToJson() {
     String json = ":)";
     json += comments.get(0);
-    json += comments.get(1);
-    json += comments.get(2);
+    json += " " + comments.get(1);
+    json += " " + comments.get(2);
     return json;
   }
 }
