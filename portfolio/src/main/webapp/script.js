@@ -1,4 +1,4 @@
- // Copyright 2019 Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-function getRandomQuoteUsingArrowFunctions(name) {
+function getName(name) {
   fetch('/data').then((response) => response.text()).then((name) => {
-  document.getElementById('name-container').innerText = name;
- });
+    document.getElementById('name-container').innerText = name;
+  });
 }

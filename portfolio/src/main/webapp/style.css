@@ -1,5 +1,5 @@
 html {
-    background: cornsilk;
+  background: cornsilk;
 }
 
 #content {
@@ -8,38 +8,38 @@ html {
 }
 
 .size {
-    width:100%;
-    height: 650px;
+  width: 100%;
+  height: 650px;
 }
 .font {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .textsize {
-    font-size:50px;
+  font-size: 50px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .right {
-    align-content: right;
+  align-content: right;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
 #about {
-    background: coral;
-    width:85%;
-    margin: auto;
+  background: coral;
+  width: 85%;
+  margin: auto;
 }
 
 #selfie {
-    float: right;
-    position: relative;
+  float: right;
+  position: relative;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -47,26 +47,33 @@ html {
 }
 
 #experience {
-    background: cornflowerblue;
-    text-align: center;
-    margin: auto;
-    width:85%;
+  background: cornflowerblue;
+  text-align: center;
+  margin: auto;
+  width: 85%;
 }
 
 #contact {
-    background: goldenrod;
-    width:85%;
-    margin:auto;
-    text-align: left; 
+  background: goldenrod;
+  width: 85%;
+  margin: auto;
+  text-align: left;
+}
+
+#comments {
+    background: purple;
+    width: 85%;
+    text-align: center;
+    margin: auto;
 }
 #welcome {
-    color: coral;
-    font-size:200px;
-    align-content: center;
-    margin-bottom: 0;
+  color: coral;
+  font-size: 200px;
+  align-content: center;
+  margin-bottom: 0;
 }
 .fontcolor {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 .button {
   border: none;
@@ -78,29 +85,28 @@ html {
   border-radius: 25px;
   overflow: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position:relative;
+  position: relative;
   -ms-transform: translateY(-50%);
   transform: translateY(-15%);
-  
 }
 
-.wordtext{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-    color: antiquewhite;
+.wordtext {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  color: antiquewhite;
 }
 
-#list{
-    align-content: center;
-    -ms-transform: translateY(+50%);
-    transform: translateY(+50%);
+#list {
+  align-content: center;
+  -ms-transform: translateY(+50%);
+  transform: translateY(+50%);
 }
 
 #bio {
-    width:50%;
-    float: left;
-    text-align:center;
-    margin-left: 50px;
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-left: 50px;
   position: relative;
   top: 50%;
   -ms-transform: translateY(-50%);
