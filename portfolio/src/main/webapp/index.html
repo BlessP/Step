@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
     <div class="center" id="content">
       <div class="button" id="buttons">
         <p class="center font" id="welcome">Bless Paynes' Portfolio</p>
@@ -46,11 +46,13 @@
       <a href="https://github.com/BlessP/Step"><p style="color: purple;">Github</p></a>
     </div>
     <div class="size font textsize center fontcolor" id="comments">
-        <h2 id="Comments">Comment!</h2>
-        <div class="buttons" id="message">
-        <button onclick="getJson()" type="button">Click!</button>
-        <div id="name-container"></div>
-      </div>
+      <h2 id="Comments">Comment!</h2>
+      <ul id="history"></ul>
+      <form action="/data" method="post">
+      <textarea name="text-input">Comment here!</textarea>
+      <br/><br/>
+      <button type="submit">Click!</button>
+      </form>
     </div>
   </body>
 </html>

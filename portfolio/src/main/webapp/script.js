@@ -32,3 +32,19 @@ function getJson() {
     console.log("Testing testing 123");
   });
 }
+function getComments() {
+  fetch('/data').then(response => response.json(comments)).then((list) => {
+  console.log(list);
+  const totalEl = document.getElementById('total');
+  const historyEl = document.getElementById('history');
+  historyEl.innerHTML = '';
+    list.forEach((line) => {
+      historyEl.appendChild(createListElement(line));
+    });
+  });
+}
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
