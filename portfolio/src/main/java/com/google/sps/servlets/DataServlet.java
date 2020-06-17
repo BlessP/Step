@@ -14,14 +14,14 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
-import com.google.gson.Gson;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
@@ -48,7 +48,7 @@ public class DataServlet extends HttpServlet {
     comments.add(text);
     response.setContentType("text/html;");
     response.sendRedirect("/index.html");
-  }  
+  }
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
     String value = request.getParameter("text-input");
     if (value == null) {

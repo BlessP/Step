@@ -29,15 +29,15 @@ function addRandomGreeting() {
 function getJson() {
   fetch('/data').then((response) => response.text()).then((json) => {
     document.getElementById('name-container').innerText = json;
-    console.log("Testing testing 123");
+    console.log('Testing testing 123');
   });
 }
 function getComments() {
   fetch('/data').then(response => response.json(comments)).then((list) => {
-  console.log(list);
-  const totalEl = document.getElementById('total');
-  const historyEl = document.getElementById('history');
-  historyEl.innerHTML = '';
+    console.log(list);
+    const totalEl = document.getElementById('total');
+    const historyEl = document.getElementById('history');
+    historyEl.innerHTML = '';
     list.forEach((line) => {
       historyEl.appendChild(createListElement(line));
     });
