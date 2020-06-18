@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+function addRandomGreeting() {  // eslint-disable-line
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
@@ -26,7 +26,7 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-function getName(name) {
+function getName(name) {  // eslint-disable-line
   fetch('/data').then((response) => response.text()).then((name) => {
     document.getElementById('name-container').innerText = name;
   });

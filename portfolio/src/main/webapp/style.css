@@ -24,14 +24,14 @@ html {
 }
 
 .right {
-  align-content: right;
+  align-content: end;
 }
 
 .left {
   text-align: left;
 }
 
-#about {
+.about {
   background: coral;
   width: 85%;
   margin: auto;
@@ -41,19 +41,18 @@ html {
   float: right;
   position: relative;
   top: 50%;
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-right: 50px;
 }
 
-#experience {
+.experience {
   background: cornflowerblue;
   text-align: center;
   margin: auto;
   width: 85%;
 }
 
-#contact {
+.contact {
   background: goldenrod;
   width: 85%;
   margin: auto;
@@ -79,7 +78,6 @@ html {
   overflow: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
-  -ms-transform: translateY(-50%);
   transform: translateY(-15%);
 }
 
@@ -91,7 +89,6 @@ html {
 
 #list {
   align-content: center;
-  -ms-transform: translateY(+50%);
   transform: translateY(+50%);
 }
 
@@ -102,6 +99,9 @@ html {
   margin-left: 50px;
   position: relative;
   top: 50%;
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.contactText {
+  color: purple;
 }
