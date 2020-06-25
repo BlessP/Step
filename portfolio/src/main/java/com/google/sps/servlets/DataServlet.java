@@ -34,13 +34,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
   private String name;
-  ArrayList<String> comments = new ArrayList<String>();
-  List<Task> tasks = new ArrayList<>();
+  private ArrayList<String> comments = new ArrayList<String>();
+  private List<Task> tasks = new ArrayList<>();
+  private static final String TEXT_INPUT = "text-input";
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = convertToJson();
-    response.setContentType("text/html;");
-    response.getWriter().println(json);
     Query query = new Query("Task").addSort("timestamp", SortDirection.DESCENDING);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
@@ -49,13 +48,18 @@ public class DataServlet extends HttpServlet {
     for (Entity entity : results.asIterable()) {
       long id = entity.getKey().getId();
       String title = (String) entity.getProperty("title");
+      System.out.println("title" + title);
       long timestamp = (long) entity.getProperty("timestamp");
-
+      System.out.println("time" + timestamp);
       Task task = new Task(id, title, timestamp);
       tasks.add(task);
     }
+    String json = convertToJson(tasks);
+    response.setContentType("text/html;");
+    response.getWriter().println(json);
   }
-  private String convertToJson() {
+
+  private String convertToJson(List<Task> tasks) {
     Gson gson = new Gson();
     String json = gson.toJson(tasks);
     return json;
@@ -64,22 +68,24 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
-    String text = getParameter(request, "text-input", "");
-    // Respond with the result.
-    response.setContentType("text/html;");
-    response.sendRedirect("/?authuser=0#comments");
-    String title = request.getParameter("title");
+    String text = getParameter(request, TEXT_INPUT, "");
+    System.out.println("text" + text);
+    String title = request.getParameter(TEXT_INPUT);
     long timestamp = System.currentTimeMillis();
 
-    Entity taskEntity = new Entity("text");
-    taskEntity.setProperty("title", title);
+    Entity taskEntity = new Entity("Task");
+    taskEntity.setProperty("title", text);
     taskEntity.setProperty("timestamp", timestamp);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(taskEntity);
+    // Respond with the result.
+    response.setContentType("text/html;");
+    response.sendRedirect("index.html#comments");
   }
+
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
-    String value = request.getParameter("text-input");
+    String value = request.getParameter(name);
     if (value == null) {
       return defaultValue;
     }

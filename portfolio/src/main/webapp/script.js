@@ -29,7 +29,6 @@ function addRandomGreeting() {  // eslint-disable-line
 function getJson() {
   fetch('/data').then((response) => response.text()).then((json) => {
     document.getElementById('name-container').innerText = json;
-    console.log('Testing testing 123');
   });
 }
 /** Comments will not post to screen but are being stored. */
@@ -38,7 +37,9 @@ function loadTasks() {
     const taskListElement = document.getElementById('task-list');
     tasks.forEach((task) => {
       taskListElement.appendChild(createTaskElement(task));
+      console.log(tasks);
     })
+    console.log(tasks);
   });
 }
 
@@ -62,11 +63,4 @@ function createTaskElement(task) {
   taskElement.appendChild(titleElement);
   taskElement.appendChild(deleteButtonElement);
   return taskElement;
-}
-
-/** Tells the server to delete the task. */
-function deleteTask(task) {
-  const params = new URLSearchParams();
-  params.append('id', task.id);
-  fetch('/delete-task', {method: 'POST', body: params});
 }
