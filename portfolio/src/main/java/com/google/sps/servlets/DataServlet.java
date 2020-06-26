@@ -16,15 +16,15 @@ package com.google.sps.servlets;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
+import com.google.sps.data.Task;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.google.sps.data.Task;
-import com.google.appengine.api.datastore.PreparedQuery;
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Query.SortDirection;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,14 +34,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
   private String name;
-  private ArrayList<String> comments = new ArrayList<String>();
-  private List<Task> tasks = new ArrayList<>();
+  // private List<Task> tasks = new ArrayList<>();
   private static final String TEXT_INPUT = "text-input";
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Task").addSort("timestamp", SortDirection.DESCENDING);
-
+    ArrayList<Task> comments = new ArrayList<Task>();
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
@@ -52,10 +51,11 @@ public class DataServlet extends HttpServlet {
       long timestamp = (long) entity.getProperty("timestamp");
       System.out.println("time" + timestamp);
       Task task = new Task(id, title, timestamp);
-      tasks.add(task);
+      comments.add(task);
     }
-    String json = convertToJson(tasks);
-    response.setContentType("text/html;");
+
+    String json = convertToJson(comments);
+    response.setContentType("application/json;");
     response.getWriter().println(json);
   }
 

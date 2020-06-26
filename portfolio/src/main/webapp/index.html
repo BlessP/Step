@@ -8,6 +8,7 @@
   </head>
   <body onload="loadTasks()">
     <div class="center" id="content">
+      <button onclick="topFunction()" id="topbutton" title="Go to top">Top</button>
       <div class="button" id="buttons">
         <p class="center font" id="welcome">Bless Paynes' Portfolio</p>
         <a href="#about" class="button about" id="aboutbutton">About Me</a>
@@ -45,14 +46,15 @@
         <p class="contactText"><a href="https://github.com/BlessP">Github></a></p>
       </div>
       <div class="size font textsize center fontcolor comments" id="comments">
-      <h2 id="Comment">Comment!</h2>
-      <ul id="history"></ul>
-      <ul id="task-list"></ul>
-      <form action="/data" method="post">
-        <textarea name="text-input">Comment here!</textarea>
-        <br /><br />
-        <button type="submit">Click!</button>
-      </form>
-     </div>
+        <h2 id="Comment">Comment!</h2>
+        <ul id="history"></ul>
+        <ul id="task-list"></ul>
+        <form action="/data" method="post">
+          <textarea name="text-input">Comment here!</textarea>
+          <br /><br />
+          <button type="submit">Click!</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

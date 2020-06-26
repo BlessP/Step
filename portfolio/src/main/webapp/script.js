@@ -35,6 +35,7 @@ function getJson() {
 function loadTasks() {
   fetch('/data').then(response => response.json()).then((tasks) => {
     const taskListElement = document.getElementById('task-list');
+
     tasks.forEach((task) => {
       taskListElement.appendChild(createTaskElement(task));
       console.log(tasks);
@@ -43,24 +44,31 @@ function loadTasks() {
   });
 }
 
-/** Creates an element that represents a task, including its delete button. */
+/** Creates an element that represents a task */
 function createTaskElement(task) {
   const taskElement = document.createElement('li');
   taskElement.className = 'task';
 
   const titleElement = document.createElement('span');
   titleElement.innerText = task.title;
-
-  const deleteButtonElement = document.createElement('button');
-  deleteButtonElement.innerText = 'Delete';
-  deleteButtonElement.addEventListener('click', () => {
-    deleteTask(task);
-
-    // Remove the task from the DOM.
-    taskElement.remove();
-  });
-
   taskElement.appendChild(titleElement);
-  taskElement.appendChild(deleteButtonElement);
   return taskElement;
+}
+
+var topbutton = document.getElementById('topbutton');
+window.onscroll = function() {
+  scrollFunction()
+};
+
+/**Creates a scroll function that shows the button after user scrolls 20px */
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topbutton.style.display = 'compact';
+  } else {
+    topbutton.style.display = 'none';
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.documentElement.scrollTop = 0;
 }
